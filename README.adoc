@@ -30,7 +30,7 @@ In your YAML file, add:
 ----
 
       - name: Scan with syft sbom 
-        uses: https://github.com/cloudbees-io/syft-sbom-plugin@v1
+        uses: cloudbees-io/syft-sbom-plugin@v1
         with:
           binary-tar-path: tar file path that needs to be scanned
 
