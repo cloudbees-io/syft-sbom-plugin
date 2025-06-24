@@ -20,7 +20,7 @@ runs:
           INPUT_CLOUDBEES_API_URL: ${{ cloudbees.api.url }}
           INPUT_RUN_ID: ${{ cloudbees.run_id }}
     - name: Run syft sbom compliance plugin
-      uses: docker://public.ecr.aws/l7o7z1g8/actions/assets-syft-sbom:latest
+      uses: docker://public.ecr.aws/l7o7z1g8/actions/assets-syft-sbom:9f834420f9cf4a8aa5c28fd8f26e04e4b54e7c5b
       env:
           RUN_ID: ${{ cloudbees.run_id }}
           JOB_ID: ${{ job.id }}
