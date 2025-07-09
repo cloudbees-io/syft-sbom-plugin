@@ -1,6 +1,7 @@
-= CloudBees action: Scan with Syft Sbom action
+= CloudBees action: Generate an SBOM with Syft
 
-Use this action for generating Software Bill of Materials on a repository with the Syft Sbom scanner.
+Use this action to generate a software bill of materials (SBOM) from a container image or filesystem with the open-source Syft scanner from Anchore.
+Generate SBOMs to provide dependency visibility.
 
 == Inputs
 
@@ -13,13 +14,12 @@ Use this action for generating Software Bill of Materials on a repository with t
 | Required?
 | Description
 
-
 | `binary-tar-path`
 | String
 | Yes
-| Specify the path of the binary that should be scanned.
+| The path of the binary to be scanned.
 
-
+NOTE: The binary file must be in the TAR format.
 |===
 
 == Usage example
@@ -29,11 +29,10 @@ In your YAML file, add:
 [source,yaml]
 ----
 
-      - name: Scan with syft sbom 
+      - name: Generate an SBOM with Syft
         uses: cloudbees-io/syft-sbom-plugin@v1
         with:
-          binary-tar-path: tar file path that needs to be scanned
-
+          binary-tar-path: /path/to/binary.tar
 ----
 
 == License
